@@ -30,10 +30,10 @@ General:
     # TLS: TLS settings for the GRPC server.
     TLS:
         Enabled: false
-        PrivateKey: /home/ubuntu/cryptoconfig/ordererOrganizations/fhcl.com/ca/root/tls/server.key
-        Certificate: /home/ubuntu/cryptoconfig/ordererOrganizations/fhcl.com/ca/root/tls/server.crt
+        PrivateKey: /home/ubuntu/cryptoconfig/ordererOrganizations/ORGNAME/ca/root/tls/server.key
+        Certificate: /home/ubuntu/cryptoconfig/ordererOrganizations/ORGNAME/ca/root/tls/server.crt
         RootCAs:
-          - /home/ubuntu/cryptoconfig/ordererOrganizations/fhcl.com/ca/root/tls/ca.crt
+          - /home/ubuntu/cryptoconfig/ordererOrganizations/ORGNAME/ca/root/tls/ca.crt
         ClientAuthEnabled: false
         ClientRootCAs:
 
@@ -64,14 +64,14 @@ General:
     # LocalMSPDir is where to find the private crypto material needed by the
     # orderer. It is set relative here as a default for dev environments but
     # should be changed to the real location in production.
-    LocalMSPDir: /home/ubuntu/cryptoconfig/ordererOrganizations/fhcl.com/orderers/orderer.fhcl.com/msp
+    LocalMSPDir: /home/ubuntu/cryptoconfig/ordererOrganizations/ORGNAME/orderers/orderer.ORGNAME/msp
 
     # LocalMSPID is the identity to register the local MSP material with the MSP
     # manager. IMPORTANT: The local MSP ID of an orderer needs to match the MSP
     # ID of one of the organizations defined in the in the orderer system
     # channel's /Channel/Orderer configuration. The sample organization defined
     # in the sample configuration provided has an MSP ID of "DEFAULT".
-    LocalMSPID: FHCLOrderer
+    LocalMSPID: ORGNAMEOrderer
 
     # Enable an HTTP service for Go "pprof" profiling as documented at:
     # https://golang.org/pkg/net/http/pprof
