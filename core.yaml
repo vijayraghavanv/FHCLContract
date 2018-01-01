@@ -64,7 +64,7 @@ logging:
 peer:
 
     # The Peer id is used for identifying this Peer instance.
-    id: FHCLPEER0
+    id: ORGNAME
 
     # The networkId allows for logical seperation of networks
     networkId: dev
@@ -209,11 +209,11 @@ peer:
     tls:
         enabled:  false
         cert:
-            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.fhcl.com/tls/server.crt
+            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.ORGNAME/tls/server.crt
         key:
-            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.fhcl.com/tls/server.key
+            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.ORGNAME/tls/server.key
         rootcert:
-            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.fhcl.com/tls/ca.crt
+            file: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/peers/peer0.ORGNAME/tls/ca.crt
 
         # The server name use to verify the hostname returned by TLS handshake
         serverhostoverride:
@@ -221,7 +221,7 @@ peer:
     # Path on the file system where peer will store data (eg ledger). This
     # location must be access control protected to prevent unintended
     # modification that might corrupt the peer operations.
-    fileSystemPath: $FABRIC_HOME/channel-artifacts
+    fileSystemPath: /home/ubuntu/fabric/channel-artifacts
 
     # BCCSP (Blockchain crypto provider): Select which crypto implementation or
     # library to use
@@ -240,7 +240,7 @@ peer:
                 KeyStore:
 
     # Path on the file system where peer will find MSP local configurations
-    mspConfigPath: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/users/Admin@fhcl.com/msp
+    mspConfigPath: /home/ubuntu/cryptoconfig/peerOrganizations/ORGNAME/users/Admin@ORGNAME/msp
 
     # Identifier of the local MSP
     # ----!!!!IMPORTANT!!!-!!!IMPORTANT!!!-!!!IMPORTANT!!!!----
@@ -249,7 +249,7 @@ peer:
     # to match the name of one of the MSPs in each of the channel
     # that this peer is a member of. Otherwise this peer's messages
     # will not be identified as valid by other nodes.
-    localMspId: FHCL
+    localMspId: ORGNAME
 
     # Used with Go profiling tools only in none production environment. In
     # production, it should be disabled (eg enabled: false)
