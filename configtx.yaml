@@ -20,7 +20,7 @@ Profiles:
             Organizations:
                 - *OrdererOrg
         Consortiums:
-            FHCLConsortium:
+            ORGNAMEConsortium:
                 Organizations:
                     - *ORGNAME
                     - *Supplier
