@@ -22,14 +22,14 @@ Profiles:
         Consortiums:
             FHCLConsortium:
                 Organizations:
-                    - *FHCL
+                    - *ORGNAME
                     - *Supplier
     SupplierChannel:
-        Consortium: FHCLConsortium
+        Consortium: ORGNAMEConsortium
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *FHCL
+                - *ORGNAME
                 - *Supplier
 
 ################################################################################
@@ -47,33 +47,33 @@ Organizations:
     - &OrdererOrg
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
-        Name: FHCLOrderer
+        Name: ORGNAMEOrderer
 
         # ID to load the MSP definition as
-        ID: FHCLOrderer
+        ID: ORGNAMEOrderer
 
         # MSPDir is the filesystem path which contains the MSP configuration
-        MSPDir: /home/ubuntu/cryptoconfig/ordererOrganizations/fhcl.com/orderers/orderer.fhcl.com/msp
+        MSPDir: /home/ubuntu/cryptoconfig/ordererOrganizations/ORGNAME/orderers/orderer.ORGNAME/msp
         # MSPDir: crypto-config/ordererOrganizations/example.com/msp
         AdminPrincipal: Role.ADMIN
 
 
-    - &FHCL
+    - &ORGNAME
         # DefaultOrg defines the organization which is used in the sampleconfig   #Enroll and Register a user called nodeAdmin. This will be the admin user for the organization.
 
         # of the fabric.git development environment
-        Name: FHCL
+        Name: ORGNAME
 
         # ID to load the MSP definition as
-        ID: FHCL
+        ID: ORGNAME
         # MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
-        MSPDir: /home/ubuntu/cryptoconfig/peerOrganizations/fhcl.com/msp
+        MSPDir: /home/ubuntu/cryptoconfig/peerOrganizations/ORGNAME/msp
         AdminPrincipal: Role.ADMIN
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer0.fhcl.com
+            - Host: peer0.ORGNAME
               Port: 7051
     - &Supplier
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -108,7 +108,7 @@ Orderer: &OrdererDefaults
     OrdererType: solo
 
     Addresses:
-        - orderer.fhcl.com:7050
+        - orderer.ORGNAME:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
