@@ -83,13 +83,13 @@ Organizations:
         # ID to load the MSP definition as
         ID: Supplier
         # MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
-        MSPDir: /home/ubuntu/cryptoconfig/peerOrganizations/supplier.com/msp
+        MSPDir: /home/ubuntu/cryptoconfig/peerOrganizations/supplier/msp
         AdminPrincipal: Role.ADMIN
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer.supplier.com
+            - Host: peer.supplier
               Port: 7051
 
   
