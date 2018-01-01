@@ -24,7 +24,7 @@ Profiles:
                 Organizations:
                     - *ORGNAME
                     - *Supplier
-    SupplierChannel:
+    CHANNEL_PROFILE:
         Consortium: ORGNAMEConsortium
         Application:
             <<: *ApplicationDefaults
